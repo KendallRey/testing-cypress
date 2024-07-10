@@ -35,3 +35,22 @@
 //     }
 //   }
 // }
+
+declare module Cypress {
+  interface Chainable {
+    login(username: string, password: string): Chainable<void>
+    drag(subject: string, options?: Partial<TypeOptions>): Chainable<Element>
+    dismiss(subject: string, options?: Partial<TypeOptions>): Chainable<Element>
+  }
+}
+
+Cypress.Commands.add('login', (username: number| string, password) => {
+  cy.wait(10);
+  cy.get('input[name=username]').type(String(username))
+
+  cy.wait(10);
+  cy.get('input[type=password]').type(password);
+
+  cy.get('button[type=submit]').click();
+  cy.wait(1000);
+});
