@@ -1,0 +1,19 @@
+{
+  "name": "testing-cypress",
+  "version": "1.0.0",
+  "description": "Testing cypress",
+  "main": "index.ts",
+  "scripts": {
+    "test": "test",
+    "build": "tsc",
+    "run": "dist/index.js",
+    "cy:open": "cypress open"
+  },
+  "author": "KendallReyMozo",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.14.10",
+    "cypress": "^13.11.0",
+    "typescript": "^5.4.5"
+  }
+}
